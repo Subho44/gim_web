@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!--inline js-->
+    <button onclick="alert('welcome to ardent')">Click me</button>
+    <br>
+    <!--internal js-->
+    <script>
+        // alert("hi all");
+        // document.write("login success");
+        // console.log("hello...");
+        var name = "raj";//string
+        let age = 28;//number
+        const gender = "male";
+        let loading = true;//boolean
+        var name = "pallab";
+        age = 22;
+
+        console.log(gender);
+        console.log(name);
+        document.write("Name: ", name + "<br>" + "Age: ", age + "<br>" + "gender: ", gender + "<br>" + typeof name + "<br>" + typeof age + "<br>" + typeof gender + "<br>" + typeof loading+"<br>");
+
+        //data types
+        const numbers = [1, 2, 3, 4, 5, 6]; 
+        const num = [...numbers,7,8,9];// array
+        document.write(num);
+        const details = {
+            name: "virat kohli",
+            age: 36,
+            location: "delhi",
+        }; // object
+        document.write("<br>");
+        document.write("array numbers: ", numbers[3]);
+        document.write("<br>");
+        document.write("player details: ", details.name + "<br>" + details.location)
+        document.write("<br>");
+        let score = 75;
+        let result = score > 50 ? "pass" : "Fail";
+        document.write(result);
+
+    </script>
+    <!--variable-->
+
+
+
+</body>
+
+</html>
