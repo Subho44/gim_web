@@ -1,84 +1,21 @@
 import React from 'react'
-import './App.css'
-import img1 from "../src/assets/p11.jpg"
-import img2 from "../src/assets/p16.jpg"
-import img3 from "../src/assets/p30.jpg"
-import img4 from "../src/assets/p32.jpg"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Category from './components/Category';
+import Mens from './components/Mens';
+import Blog from './components/Blog';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
 
   return <>
-
-    <div class="top-bar">
-        <p>FREE SHIPPING THIS MONTH ORDER OVER $100</p>
-    </div>
-    
-    <header class="main-header">
-        <div class="logo">BYTEWEBSTER</div>
-        <div class="search-box">
-            <input type="text" placeholder="Serach product..." />
-            <button><i class="fas fa-search"></i></button>
-        </div>
-        <div class="icons">
-            <i class="fas fa-user"></i>
-            <i class="fas fa-heart"><span>5</span></i>
-            <i class="fas fa-shopping-bag"><span>2</span></i>
-        </div>
-    </header>
-    
-    <nav class="nav-bar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Categories</a></li>
-            <li><a href="#">Men's</a></li>
-            <li><a href="#">Women's</a></li>
-            <li><a href="#">Kids</a></li>
-            <li><a href="#">Perfume</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Hot Offers</a></li>
-        </ul>
-    </nav>
-  
-    <section class="hero">
-        <div class="hero-text">
-            <h4>Trending Item</h4>
-            <h1>WOMEN'S LATEST FASHION SALE</h1>
-            <p>starting at $<strong>20.00</strong></p>
-            <button>Shop Now</button>
-        </div>
-        <div class="hero-img">
-            <img src="https://www.shutterstock.com/image-photo/pretty-blonde-woman-smiling-camera-260nw-1927533401.jpg"
-                alt="fashion" />
-        </div>
-    </section>
-   
-    <section class="categories">
-        <div class="category-card">
-            <img src={img1} alt="img"/>
-            <p>SHORTS & JEANS</p>
-        </div>
-        <div class="category-card">
-            <img src={img2} alt="img"/>
-            <p>T-SHIRTS</p>
-        </div>
-        <div class="category-card">
-            <img src={img3} alt="img"/>
-            <p>JACKET</p>
-        </div>
-         <div class="category-card">
-            <img src={img4} alt="img"/>
-            <p>JACKET</p>
-        </div>
-         <div class="category-card">
-            <img src={img2} alt="img"/>
-            <p>JACKET</p>
-        </div>
-    </section>
-  
-    <div class="popup">
-        <img src="data:image/jpeg;base64,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" />
-        <p><strong>Rose Gold Earrings</strong></p>
-    </div>
-
+    <BrowserRouter>
+              <Routes>
+                  <Route path='/' element={<Home />}></Route>
+                  <Route path='/c' element={<Category />}></Route>
+                  <Route path='/m' element={<Mens />}></Route>
+                  <Route path='/b' element={<Blog />}></Route>
+              </Routes>
+          </BrowserRouter>
   </>
 }
 
