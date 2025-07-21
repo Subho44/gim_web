@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
-import {Navbar,Nav} from 'react-bootstrap';
-const Navbardata = () => {
+import {Navbar,Nav,Form,FormControl} from 'react-bootstrap';
+const Navbardata = ({searchtext,setSearchtext}) => {
 
   return <>
   <Navbar bg="dark" expand="lg">
@@ -14,6 +14,14 @@ const Navbardata = () => {
         <Link className='nav-link text-light' to="/contact">Contact</Link>
         <Link className='nav-link text-light' to="/service">Service</Link>
     </Nav>
+    <Form inline className='ml-auto'>
+      <FormControl
+        type='text'
+        placeholder='search products...'
+        value={searchtext}
+        onChange={(e)=>setSearchtext(e.target.value)}
+      />
+    </Form>
    </Navbar.Collapse>
   </Navbar>
 

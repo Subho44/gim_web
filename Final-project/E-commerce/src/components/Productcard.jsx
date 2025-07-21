@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card,Button } from 'react-bootstrap'
-import products from "../data/product";
-const Productcard = () => {
+import {Link} from "react-router-dom"
+const Productcard = ({products}) => {
 
   return <>
     <div className='row'>
@@ -13,7 +13,10 @@ const Productcard = () => {
           <Card.Title>{x.name}</Card.Title>
           <Card.Text>{x.description}</Card.Text>
           <h5>{x.price}</h5>
-          <Button variant='primary'>View</Button>
+          <Link to={`/product/${x.id}`}>
+             <Button variant='primary'>View</Button>
+          </Link>
+         
         </Card.Body>
       </Card>
       </div>
